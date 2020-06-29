@@ -12,5 +12,7 @@ Network Monitor
 
 Installation pre-requisites
 - install arping and grant CAP_NET_RAW to arping
--- `sudo apt install arping`
--- `sudo setcap cap_net_raw+eip $(eval readlink -f ``which arping``)`
+
+`sudo apt install arping`
+
+`sudo setcap cap_net_raw+eip $(eval readlink -f ``which arping``)`
