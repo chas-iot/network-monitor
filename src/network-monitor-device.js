@@ -1,5 +1,5 @@
 /**
- * network-monitor-device.js - network scanner.
+ * network-monitor-device.js - network presence scanner.
  *
  * This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -159,7 +159,7 @@ class UnitsNetworkMonitorProperty extends NetworkMonitorProperty {
         );
     }
 
-    // this should always execute after the object is fully setup
+    // this only executes after the object is fully setup
     updateSeen() {
         this.lastSeen = Date.now();
         this.findProperty('seconds').set(0);
