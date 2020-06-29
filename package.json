@@ -1,0 +1,52 @@
+{
+  "version": "0.1.0",
+  "name": "network-monitor",
+  "display_name": "Network Monitor",
+  "description": "Network Monitor add-on for Mozilla WebThings Gateway. This monitors the presence of devices on the local network(s)",
+  "author": "Chas-IoT",
+  "license": "MPL-2.0",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint ."
+  },
+  "keywords": [
+    "mozilla",
+    "iot",
+    "network",
+    "monitor",
+    "presence"
+  ],
+  "homepage": "https://github.com/chas-iot/network-monitor",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chas-iot/network-monitor.git"
+  },
+  "bugs": {
+    "url": "https://github.com/chas-iot/network-monitor/issues"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.8.0"
+  },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "SHA256SUMS",
+    "src/network-monitor-adaoptor.js",
+    "src/network-monitor-device.js",
+    "index.js",
+    "manifest.json"
+  ],
+  "moziot": {
+    "api": {
+      "min": 2,
+      "max": 2
+    },
+    "type": "adapter",
+    "plugin": true,
+    "exec": "{nodeLoader} {path}"
+  },
+  "dependencies": {
+    "ip-cidr": "^2.0.13"
+  }
+}

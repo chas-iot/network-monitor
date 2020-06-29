@@ -1,0 +1,53 @@
+{
+  "version": "0.1.0",
+  "id": "network-monitor",
+  "name": "Network Monitor",
+  "description": "Tracks the availability or presence of devices on the local network. For home automation, a common use is to trigger different events based on the presence or absence of a smartphone.",
+  "short_name": "NetMon",
+  "author": "Chas-IoT",
+  "homepage_url": "https://github.com/chas-iot/network-monitor",
+  "license": "MPL-2.0",
+  "manifest_version": 1,
+  "gateway_specific_settings": {
+    "webthings": {
+      "exec": "{nodeLoader} {path}",
+      "primary_type": "adapter",
+      "strict_max_version": "*",
+      "strict_min_version": "0.10.0"
+    }
+  },
+  "options": {
+    "schema": {
+        "type": "object",
+        "description": "Settings for Network Monitor",
+        "properties": {
+            "network_rescan_interval": {
+              "type": "integer",
+              "description": "The interval in minutes between a complete rescan of the network. To manually trigger a rescan, go to the Gateway main Things page and click add (+).",
+              "minimum": 15,
+              "maximum": 10080
+            },
+            "ping_batch_size": {
+              "type": "integer",
+              "description": "The number of ping commands in a batch. A small batch size will find devices more quickly however, on a large network, may overflow the number of simultaneous processes allowed. A large batch size may mean that the ARP cache times out before a device is detected.",
+              "minimum": 10,
+              "maximum": 55
+            },
+            "logging": {
+              "type": "boolean",
+              "description": "Write out significant events to the gateway log"
+          }
+        },
+        "required": [
+          "logging",
+          "ping_batch_size",
+          "network_rescan_interval"
+        ]
+    },
+    "default": {
+      "logging": false,
+      "ping_batch_size": 11,
+      "network_rescan_interval": 60
+    }
+  }
+}
