@@ -2,7 +2,7 @@
   "version": "0.1.0",
   "name": "network-monitor",
   "display_name": "Network Monitor",
-  "description": "Network Monitor add-on for Mozilla WebThings Gateway. This monitors the presence of devices on the local network(s)",
+  "description": "Network Monitor add-on for the WebThings IoT Gateway. This monitors the presence of devices on the local network(s)",
   "author": "Chas-IoT",
   "license": "MPL-2.0",
   "main": "index.js",
@@ -10,7 +10,6 @@
     "lint": "eslint ."
   },
   "keywords": [
-    "mozilla",
     "iot",
     "network",
     "monitor",
