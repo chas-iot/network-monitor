@@ -46,6 +46,6 @@
     "exec": "{nodeLoader} {path}"
   },
   "dependencies": {
-    "ip-cidr": "^2.0.13"
+    "ip-cidr": "^2.1.1"
   }
 }
