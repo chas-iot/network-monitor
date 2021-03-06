@@ -7,8 +7,7 @@
   "license": "MPL-2.0",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint .",
-    "prettier": "prettier -u -w src"
+    "lint": "eslint ."
   },
   "keywords": [
     "iot",
@@ -23,6 +22,9 @@
   },
   "bugs": {
     "url": "https://github.com/chas-iot/network-monitor/issues"
+  },
+  "dependencies": {
+    "ip-cidr": "^2.1.2"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
@@ -45,8 +47,5 @@
     "type": "adapter",
     "plugin": true,
     "exec": "{nodeLoader} {path}"
-  },
-  "dependencies": {
-    "ip-cidr": "^2.1.2"
   }
 }

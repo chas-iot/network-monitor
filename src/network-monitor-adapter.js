@@ -8,7 +8,7 @@
 
 'use strict';
 
-const ARPING_COUNT = 60 * 60 * 6; // seconds or ping count. ARPING sends one query per second
+const ARPING_COUNT = 60 * 60 * 6; // seconds or ping count. arping sends one query per second
 
 const manifest = require('../manifest.json');
 const deviceSuffix = `-${manifest.id}`;
@@ -144,7 +144,7 @@ class NetworkMonitorAdapter extends Adapter {
       }
       this.logging && console.log('hunting', device);
       scan.push(exec(`ping -c 1 -4 ${device} ; exit 0`));
-      scan.push(exec(`arping -c 1 ${device} ; exit 0`));
+      scan.push(exec(`sudo arping -c 1 ${device} ; exit 0`));
     }
 
     // process the results, which are stored in an array of promises
@@ -221,7 +221,7 @@ class NetworkMonitorAdapter extends Adapter {
     // note that arping sends an arp request once a second,
     // so we asynchronously process the streamed results
     // a ping count of 3600 means the job runs for an hour
-    const ping = spawn('arping', ['-c', ARPING_COUNT, '-i', device.iface, device.mac]);
+    const ping = spawn('sudo', ['arping', '-c', ARPING_COUNT, '-i', device.iface, device.mac]);
     this.logging && console.log('tracking', device.title);
     ping.on('exit', (code) => this.logging &&
         console.log('arping completed for', device.title, ' with code ', code));

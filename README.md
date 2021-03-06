@@ -11,8 +11,8 @@ Network Monitor
 - is a playground for me to explore ideas
 
 Installation pre-requisites
-- install arping and grant CAP_NET_RAW to arping
-
+- install arping
 `sudo apt install arping`
 
-`sudo setcap cap_net_raw+eip $(eval readlink -f `which arping`)`
+- add a line similar to the following into sudoers - check both the user id that runs the adaptor and the path to the arping executable
+`webthings       ALL= NOPASSWD: /usr/sbin/arping`
