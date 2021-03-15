@@ -24,7 +24,7 @@
     "url": "https://github.com/chas-iot/network-monitor/issues"
   },
   "dependencies": {
-    "ip-cidr": "^2.1.2"
+    "ip-cidr": "^2.1.3"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
