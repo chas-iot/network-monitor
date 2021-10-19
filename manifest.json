@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "0.1.1",
   "id": "network-monitor",
   "name": "Network Monitor",
   "description": "Tracks the availability or presence of devices on the local network. For home automation, a common use is to trigger different events based on the presence or absence of a smartphone.",

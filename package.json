@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "0.1.1",
   "name": "network-monitor",
   "display_name": "Network Monitor",
   "description": "Network Monitor add-on for the WebThings IoT Gateway. This monitors the presence of devices on the local network(s)",
